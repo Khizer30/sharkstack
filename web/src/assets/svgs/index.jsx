@@ -287,6 +287,23 @@ export function HourglassIcon({ size = 24 }) {
   );
 }
 
+export function DollarIcon({ size = 24 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 1v22" />
+      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+    </svg>
+  );
+}
+
+export function WhatsappIcon({ size = 20 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.07-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm0 18.1c-1.6 0-3.1-.43-4.4-1.2l-.32-.19-3.01.79.8-2.94-.2-.32A8.09 8.09 0 0 1 3.9 12c0-4.47 3.63-8.1 8.1-8.1 4.47 0 8.1 3.63 8.1 8.1 0 4.47-3.63 8.1-8.1 8.1Zm4.46-6.07c-.24-.12-1.43-.7-1.65-.78-.22-.08-.38-.12-.55.12-.16.24-.63.78-.77.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.02-.37.11-.5.12-.12.27-.3.4-.46.13-.16.18-.27.27-.46.09-.18.04-.34-.04-.46-.08-.12-.5-1.2-.68-1.64-.18-.44-.36-.38-.5-.39l-.42-.01c-.14 0-.37.05-.56.27-.19.22-.72.71-.72 1.72s.75 1.99.86 2.13c.1.14 1.49 2.28 3.62 3.11 1.79.69 2.16.56 2.55.52.39-.04 1.25-.5 1.43-1 .18-.5.18-.92.13-1-.04-.09-.23-.15-.47-.26Z" />
+    </svg>
+  );
+}
+
 export function RocketIcon({ size = 24 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

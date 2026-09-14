@@ -9,7 +9,7 @@ export const trainingContent = {
     { label: "Registration Closes", value: "29 September", icon: "hourglass" },
     { label: "Classes Start", value: "1 October", icon: "rocket" },
     { label: "Duration", value: "3 Months", icon: "clock" },
-    { label: "Format", value: "Hands-on Cohort", icon: "users" }
+    { label: "Training Fee", value: "$108 one time payment", icon: "dollar" }
   ],
   overviewHeading: "What this masterclass is",
   overview: [
@@ -25,6 +25,18 @@ export const trainingContent = {
     "Shipping, evaluating, and monitoring AI in production",
     "A capstone project to headline your portfolio"
   ],
+  paymentHeading: "How to pay",
+  paymentNote: "Make your payment of $108 to the bank account below, then send a screenshot of the receipt on WhatsApp to confirm your seat.",
+  bank: {
+    name: "Meezan Bank",
+    iban: "PK23MEZN00002060109958516",
+    accountTitle: "Muhammad Shibbal Farooq"
+  },
+  whatsapp: {
+    label: "Send Payment Receipt",
+    number: "+92 331 1144446",
+    link: "https://wa.me/923311144446"
+  },
   ctaLabel: "Join the wait-list"
 };
 
