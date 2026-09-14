@@ -1,0 +1,1342 @@
+{
+  "info": {
+    "name": "SharkStack",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "Check App's Health",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/health",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "health"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Leads",
+      "item": [
+        {
+          "name": "Get Leads",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/leads",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "leads"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Create Lead",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/leads",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "leads"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Muhammad Khizer\",\n    \"email\": \"syed.khizer30@gmail.com\",\n    \"companyName\": \"SharkStack\",\n    \"companyLink\": \"https://sharkstack.dev\",\n    \"region\": \"Pakistan\",\n    \"phone\": \"+92 000 1234567\",\n    \"services\": [],\n    \"projectDetails\": \"SharkStack\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Applicants",
+      "item": [
+        {
+          "name": "Get Applicants",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/applicants",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "applicants"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Create Applicant",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/applicants",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "applicants"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "firstName",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "Muhammad"
+                },
+                {
+                  "key": "lastName",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "Khizer"
+                },
+                {
+                  "key": "email",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "syed.khizer30@gmail.com"
+                },
+                {
+                  "key": "city",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "Rawalpindi"
+                },
+                {
+                  "key": "state",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "Punjab"
+                },
+                {
+                  "key": "phone",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "+92 000 1234567"
+                },
+                {
+                  "key": "resume",
+                  "disabled": false,
+                  "type": "file",
+                  "description": "",
+                  "src": "/D:/Resume.pdf"
+                },
+                {
+                  "key": "jobId",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "{{jobID}}"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Jobs",
+      "item": [
+        {
+          "name": "Create Job",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/jobs",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "jobs"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"MERN Developer\",\n    \"department\": \"DEVELOPMENT\",\n    \"workNature\": \"REMOTE\",\n    \"type\": \"FULL_TIME\",\n    \"responsibilities\": \"None\",\n    \"requirements\": \"BS CS\",\n    \"benefits\": [\n        \"None\"\n    ],\n    \"skills\": [\n        \"10+ Years Experience\"\n    ],\n    \"additionalSkills\": [\n        \".NET\"\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Get Jobs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/jobs",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "jobs"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Get Jobs By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/jobs/{{jobID}}",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "jobs",
+                "{{jobID}}"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Update Job",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/jobs/{{jobID}}",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "jobs",
+                "{{jobID}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"MERN Developer\",\n    \"department\": \"DEVELOPMENT\",\n    \"workNature\": \"REMOTE\",\n    \"type\": \"FULL_TIME\",\n    \"responsibilities\": \"None\",\n    \"requirements\": \"BS CS\",\n    \"benefits\": [\n        \"None\"\n    ],\n    \"skills\": [\n        \"10+ Years Experience\"\n    ],\n    \"additionalSkills\": [\n        \".NET\"\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Delete Job",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/jobs/{{jobID}}",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "jobs",
+                "{{jobID}}"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Testimonials",
+      "item": [
+        {
+          "name": "Create Testimonials",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/testimonials",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "testimonials"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "clientName",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "Muhammad Khizer"
+                },
+                {
+                  "key": "company",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "Google"
+                },
+                {
+                  "key": "review",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "SharkStack is great!"
+                },
+                {
+                  "key": "clientImage",
+                  "disabled": false,
+                  "type": "file",
+                  "description": "",
+                  "src": "postman-cloud:///1f06d87d-9569-4cb0-baaa-3ce7c1332523"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Testimonials",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/testimonials",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "testimonials"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Delete Testimonial",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/testimonials/{{testimonialD}}",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "testimonials",
+                "{{testimonialD}}"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Activities",
+      "item": [
+        {
+          "name": "Create Activities",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/activities",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "activities"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "disabled": false,
+                  "type": "file",
+                  "description": "",
+                  "src": "postman-cloud:///1f06d87d-9569-4cb0-baaa-3ce7c1332523"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Activities",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/activities",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "activities"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Delete Activities",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/activities/{{activityID}}",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "activities",
+                "{{activityID}}"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Portfolio",
+      "item": [
+        {
+          "name": "Create Portfolio",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/portfolios",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "portfolios"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "Cazza.AI"
+                },
+                {
+                  "key": "description",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "AI chatbot"
+                },
+                {
+                  "key": "problemAndSolution",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "Kashmir Issue"
+                },
+                {
+                  "key": "link",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "https://www.cazza.ai"
+                },
+                {
+                  "key": "technologies",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "[\"React.JS\", \"Node.JS\"]"
+                },
+                {
+                  "key": "tools",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "[\"AWS\"]"
+                },
+                {
+                  "key": "media",
+                  "disabled": false,
+                  "type": "file",
+                  "description": "",
+                  "src": [
+                    "postman-cloud:///1f06d87d-9569-4cb0-baaa-3ce7c1332523",
+                    "postman-cloud:///1f06d876-8aa0-41f0-94dd-17dcfb18a164"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Portfolios",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/portfolios",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "portfolios"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Delete Portfolio",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/portfolios/{{portfoliosID}}",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "portfolios",
+                "{{portfoliosID}}"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Services",
+      "item": [
+        {
+          "name": "Create Service",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/services",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "services"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Web Development\",\n    \"description\": \"Best MERN stack developers\",\n    \"subheadings\": [\n        {\n            \"title\": \"React.JS\",\n            \"description\": \"UI Library\"\n        }\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Get Services",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/services",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "services"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Delete Service",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/services/{{serviceID}}",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "services",
+                "{{serviceID}}"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Team Member",
+      "item": [
+        {
+          "name": "Create Team Member",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/team-members",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "team-members"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "Syed Muhammad Khizer"
+                },
+                {
+                  "key": "socialLink",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "https://www.linkedin.com/in/khizer30"
+                },
+                {
+                  "key": "jobTitle",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "MERN stack developer"
+                },
+                {
+                  "key": "review",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "Great place to work!"
+                },
+                {
+                  "key": "profileImage",
+                  "disabled": false,
+                  "type": "file",
+                  "description": "",
+                  "src": "postman-cloud:///1f06d87d-9569-4cb0-baaa-3ce7c1332523"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Team Members",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/team-members",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "team-members"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Delete Team Member",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/team-members/{{teamMemberID}}",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "team-members",
+                "{{teamMemberID}}"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Projects",
+      "item": [
+        {
+          "name": "Create Project",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/projects",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "projects"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Telemedicine\",\n    \"clientName\": \"Oscar\",\n    \"clientEmail\": \"oscar@gmail.com\",\n    \"status\": \"COMPLETED\",\n    \"services\": [\"React\", \"Node.JS\"],\n    \"description\": \"Telemedicine app\",\n    \"budget\": \"$1000\",\n    \"deadline\": \"Janurary 2026\",\n    \"notes\": \"Hello World\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Get Projects",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/projects",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "projects"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Chatbot",
+      "item": [
+        {
+          "name": "Send Message (New Session)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              }
+            ],
+            "description": "Sends the first message of a new conversation. Omit `sessionId` to start a fresh session — the response includes a `sessionId` to reuse on every following message so the bot keeps short-term memory of this conversation.",
+            "url": {
+              "raw": "{{url}}/chatbot/chat",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "chatbot",
+                "chat"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"message\": \"How many leads do we have right now?\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {},
+                "exec": [
+                  "const data = pm.response.json();",
+                  "",
+                  "if (data && data.data && data.data.sessionId) {",
+                  "    pm.collectionVariables.set(\"sessionID\", data.data.sessionId);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Send Message (Continue Session)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              }
+            ],
+            "description": "Continues the conversation started by 'Send Message (New Session)' by passing the saved `sessionId` collection variable, so the bot remembers earlier turns (e.g. it should resolve 'them'/'it' from context).",
+            "url": {
+              "raw": "{{url}}/chatbot/chat",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "chatbot",
+                "chat"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"message\": \"Can you list the most recent ones?\",\n    \"sessionId\": \"{{sessionID}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {},
+                "exec": [
+                  "const data = pm.response.json();",
+                  "",
+                  "if (data && data.data && data.data.sessionId) {",
+                  "    pm.collectionVariables.set(\"sessionID\", data.data.sessionId);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Lead via Chat",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              }
+            ],
+            "description": "Example of using the chatbot to create a lead conversationally. The bot will summarize the details back and ask for confirmation before saving — send a follow-up 'yes, confirm' message in the same session to complete it.",
+            "url": {
+              "raw": "{{url}}/chatbot/chat",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "chatbot",
+                "chat"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"message\": \"Add a new lead: Ali Raza, ali.raza@example.com, based in Lahore, phone +92 300 1234567, interested in Web Development and SEO, project details: needs a new company website with SEO setup\",\n    \"sessionId\": \"{{sessionID}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Ask About Projects via Chat",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              }
+            ],
+            "description": "Example of querying the projects table through the chatbot's list_recent_projects tool.",
+            "url": {
+              "raw": "{{url}}/chatbot/chat",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "chatbot",
+                "chat"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"message\": \"What client projects are currently in progress?\",\n    \"sessionId\": \"{{sessionID}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Packages",
+      "item": [
+        {
+          "name": "Get All Packages",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/packages",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "packages"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Get Package by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/packages/{{packageId}}",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "packages",
+                "{{packageId}}"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Create Package",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              }
+            ],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/packages",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "packages"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"slug\": \"website-essentials\",\n  \"name\": \"Website Essentials\",\n  \"packageType\": \"WEBSITE\",\n  \"description\": \"A professional and fast website for modern businesses.\",\n  \"monthlyPriceCents\": 29900,\n  \"buildFeeCents\": 150000,\n  \"setupFeeMinCents\": 50000,\n  \"setupFeeMaxCents\": 100000,\n  \"contractMonths\": 12,\n  \"earlyExitFeeMinCents\": 30000,\n  \"earlyExitFeeMaxCents\": 50000,\n  \"overageRateCents\": 0,\n  \"currency\": \"USD\",\n  \"isCustomQuote\": false,\n  \"isActive\": true,\n  \"features\": [\n    {\n      \"feature\": \"3 Custom Pages\",\n      \"sortOrder\": 1\n    },\n    {\n      \"feature\": \"Contact Form Integration\",\n      \"sortOrder\": 2\n    }\n  ],\n  \"addons\": [\n    {\n      \"name\": \"Blog Setup\",\n      \"description\": \"Custom blog section\",\n      \"additionalPriceCents\": 50000,\n      \"billingType\": \"ONE_TIME\"\n    }\n  ],\n  \"aiGrowthTiers\": [],\n  \"automationTiers\": [],\n  \"notes\": [\n    {\n      \"noteType\": \"BUSINESS\",\n      \"title\": \"Core value proposition\",\n      \"content\": \"Great for simple lead generation websites.\",\n      \"isPublic\": true\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Update Package Features & Details",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              }
+            ],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/packages/{{packageId}}",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "packages",
+                "{{packageId}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Website Essentials (Pro)\",\n  \"monthlyPriceCents\": 34900,\n  \"features\": [\n    {\n      \"feature\": \"5 Custom Pages\",\n      \"sortOrder\": 1\n    },\n    {\n      \"feature\": \"Contact Form Integration\",\n      \"sortOrder\": 2\n    },\n    {\n      \"feature\": \"Basic SEO Setup\",\n      \"sortOrder\": 3\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Delete Package",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "description": "",
+            "url": {
+              "raw": "{{url}}/packages/{{packageId}}",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "packages",
+                "{{packageId}}"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Internees",
+      "item": [
+        {
+          "name": "Get All Internees",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              }
+            ],
+            "description": "Retrieve a list of all internee registrations.",
+            "url": {
+              "raw": "{{url}}/internees",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "internees"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Create Internee",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "description": "",
+                "disabled": false,
+                "type": "default"
+              }
+            ],
+            "description": "Create a new internee registration with resume upload.\n\n**Form Data:**\n- name: Full name of the internee (required)\n- email: Email address (required)\n- phone: Phone number in format: +1 234 567 8900 (required)\n- about: Background and motivation (min 10 characters, required)\n- resume: PDF file upload (max 5MB, optional but recommended)",
+            "url": {
+              "raw": "{{url}}/internees",
+              "protocol": "",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "internees"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "John Doe"
+                },
+                {
+                  "key": "email",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "john@example.com"
+                },
+                {
+                  "key": "phone",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "+1 234 567 8900"
+                },
+                {
+                  "key": "about",
+                  "disabled": false,
+                  "type": "text",
+                  "description": "",
+                  "value": "I am a passionate developer with 2 years of experience in full-stack web development. I'm excited to join the SharkStack training program to enhance my skills and contribute to innovative projects."
+                },
+                {
+                  "key": "resume",
+                  "disabled": false,
+                  "type": "file",
+                  "description": "",
+                  "src": "D:\\Resume.pdf",
+                  "contentType": "application/pdf"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "sessionID",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "activityID",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "portfoliosID",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "jobID",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "serviceID",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "teamMemberID",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "url",
+      "value": "http://localhost:5000/api",
+      "type": "default"
+    },
+    {
+      "key": "packageId",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "testimonialD",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "base_url",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
