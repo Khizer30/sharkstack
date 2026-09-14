@@ -1,8 +1,5 @@
 {
-  "name": "sharkstack-web",
-  "private": true,
-  "version": "1.0.0",
-  "type": "module",
+  "name": "web",
   "scripts": {
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "eslint . --fix",
