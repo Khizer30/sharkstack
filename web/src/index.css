@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+/* ─── Reset ──────────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: auto !important;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+
+/* ─── Root ───────────────────────────────────────────────────────────────── */
+:root {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ─── Body ───────────────────────────────────────────────────────────────── */
+body {
+  min-height: 100dvh;
+  background-color: #050914;
+  color: #000000;
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Elements ───────────────────────────────────────────────────────────── */
+img, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  user-select: none;
+  background: none;
+  border: none;
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* Hide scrollbar on the process card inner scroll container */
+.ps-inner-scroll::-webkit-scrollbar { display: none; }
+
+/* Hide scrollbar on the chatbot message log */
+.chat-log-scroll::-webkit-scrollbar { display: none; }
+
+/* Hide scrollbar on the WhySharkScroll mobile horizontal card row */
+.wss-h-scroll::-webkit-scrollbar { display: none; }
+
+/* Hide scrollbar on the contact drawer's scrollable field list */
+.contact-drawer-scroll::-webkit-scrollbar { display: none; }
+
+/* ─── SteppedTextReveal ──────────────────────────────────────────────────── */
+.stepped-text-wrapper {
+  position: relative;
+  min-height: 9em;
+}
+
+.stepped-text-p {
+  position: absolute;
+}
+
+@media (max-width: 767px) {
+  .stepped-text-wrapper {
+    min-height: unset;
+  }
+
+  .stepped-text-p {
+    position: relative;
+  }
+}
+
+.mobile-only {
+  display: grid;
+}
+
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+/* ─── Chart tokens ───────────────────────────────────────────────────────── */
+:root {
+  --chart-1: #F05A28;
+  --chart-2: #FF8C5A;
+  --chart-3: #7C3AED;
+  --chart-4: #9B6BF5;
+  --chart-5: #3B82F6;
+  --chart-grid: rgba(240, 237, 230, 0.08);
+  --chart-line-primary: rgba(240, 237, 230, 0.15);
+}
+
+/* ─── Blob gradient animation ────────────────────────────────────────────── */
+@keyframes blob-drift {
+  0%   { transform: translate(0px, 0px); }
+  25%  { transform: translate(calc(var(--tx-1, 0) * 100px), calc(var(--ty-1, 0) * 100px)); }
+  50%  { transform: translate(calc(var(--tx-2, 0) * 100px), calc(var(--ty-2, 0) * 100px)); }
+  75%  { transform: translate(calc(var(--tx-3, 0) * 100px), calc(var(--ty-3, 0) * 100px)); }
+  100% { transform: translate(calc(var(--tx-4, 0) * 100px), calc(var(--ty-4, 0) * 100px)); }
+}
+.blob-animate {
+  animation: blob-drift var(--blob-speed, 20s) ease-in-out infinite alternate;
+}
+
+/* ─── Footer ─────────────────────────────────────────────────────────────── */
+@keyframes footer-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes footer-breathe {
+  0%   { transform: translate(-50%, -50%) scale(1);   opacity: 0.5; }
+  100% { transform: translate(-50%, -50%) scale(1.12); opacity: 0.9; }
+}
+
+@keyframes footer-heartbeat {
+  0%, 100% { transform: scale(1); }
+  15%, 45% { transform: scale(1.25); }
+  30%      { transform: scale(1); }
+}

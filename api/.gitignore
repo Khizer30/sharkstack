@@ -1,0 +1,28 @@
+# Logs
+*.log
+
+# Dependency Directories
+node_modules
+
+# Environment Variable Files
+.env
+.env.*
+!.env.example
+
+# Build
+dist
+
+# Developer Directories
+.Extras
+.claude
+.vscode
+
+# Playwright
+playwright
+playwright-report
+test-results
+
+# Client Secrets
+client_secret
+client_secret.*
+client_secret.json
