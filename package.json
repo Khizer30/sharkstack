@@ -10,9 +10,8 @@
     "dev": "concurrently -k \"pnpm dev:api\" \"pnpm dev:web\" --names \"NestJS,React\" --prefix-colors \"red,blue\"",
     "lint": "pnpm --filter api lint && pnpm --filter web lint",
     "lint:fix": "pnpm --filter api lint:fix && pnpm --filter web lint:fix",
-    "format": "prettier --check \"**/*.{ts,tsx,json,md}\"",
-    "format:fix": "prettier --write \"**/*.{ts,tsx,json,md}\"",
-    "typecheck": "pnpm --filter api typecheck && pnpm --filter web typecheck",
+    "format": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:fix": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "build:api": "pnpm --filter api build",
     "build:web": "pnpm --filter web build",
     "build": "pnpm build:api && pnpm build:web"
