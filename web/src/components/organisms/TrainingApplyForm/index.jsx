@@ -149,6 +149,36 @@ export default function TrainingApplyForm() {
               error={fieldError("about")}
             />
 
+            <div>
+              <label style={{ display: "block", ...fonts.montMedium, fontSize: "0.85rem", color: colors.textPrimary, marginBottom: "0.5rem" }}>
+                Resume (PDF)
+              </label>
+              <input
+                type="file"
+                name="resume"
+                accept=".pdf"
+                onChange={(e) => {
+                  const file = e.currentTarget.files?.[0];
+                  formik.setFieldValue("resume", file || null);
+                }}
+                onBlur={() => formik.setFieldTouched("resume", true)}
+                style={{
+                  display: "block",
+                  width: "100%",
+                  padding: "0.75rem",
+                  border: `1px solid ${colors.borderLight}`,
+                  borderRadius: "0.5rem",
+                  fontSize: "0.9rem",
+                  cursor: "pointer"
+                }}
+              />
+              {fieldError("resume") && (
+                <p style={{ ...fonts.montMedium, fontSize: "0.8rem", color: colors.error, margin: "0.25rem 0 0" }}>
+                  {fieldError("resume")}
+                </p>
+              )}
+            </div>
+
             {status === "failed" && (
               <p style={{ ...fonts.montMedium, fontSize: "0.85rem", color: colors.error, margin: 0 }}>{trainingFormContent.errorMessage}</p>
             )}

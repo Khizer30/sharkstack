@@ -27,7 +27,8 @@ CREATE TABLE "internees" (
 	"name" text NOT NULL,
 	"email" text NOT NULL,
 	"phone" text NOT NULL,
-	"about" text NOT NULL
+	"about" text NOT NULL,
+	"resume_url" text
 );
 --> statement-breakpoint
 CREATE TABLE "jobs" (

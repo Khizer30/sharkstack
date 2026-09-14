@@ -1,4 +1,4 @@
-import { IsString, IsNotEmpty, IsEmail, Matches } from "class-validator";
+import { IsString, IsNotEmpty, IsEmail, Matches, IsOptional } from "class-validator";
 import { Trim, Lowercase } from "@common/transformer";
 
 export class CreateInterneeDto {
@@ -23,4 +23,7 @@ export class CreateInterneeDto {
   @IsNotEmpty({ message: "About is required" })
   @Trim()
   about: string;
+
+  @IsOptional()
+  resume?: Express.Multer.File;
 }

@@ -6,7 +6,8 @@ export const internees = pgTable("internees", {
   name: text().notNull(),
   email: text().notNull(),
   phone: text().notNull(),
-  about: text().notNull()
+  about: text().notNull(),
+  resumeUrl: text()
 });
 
 export type Internee = typeof internees.$inferSelect;

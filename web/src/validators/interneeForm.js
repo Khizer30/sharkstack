@@ -19,12 +19,24 @@ export const interneeFormSchema = yup.object({
     .trim()
     .matches(/^[+\d][\d\s-]{6,19}$/, "Enter a valid phone number")
     .required("Phone is required"),
-  about: noEmoji(yup.string().trim().min(10, "Tell us a bit more about yourself").required("This field is required"))
+  about: noEmoji(yup.string().trim().min(10, "Tell us a bit more about yourself").required("This field is required")),
+  resume: yup
+    .mixed()
+    .nullable()
+    .test("fileSize", "Resume must be less than 5MB", (value) => {
+      if (!value) return true;
+      return value.size <= 5 * 1024 * 1024;
+    })
+    .test("fileType", "Only PDF files are allowed", (value) => {
+      if (!value) return true;
+      return value.type === "application/pdf";
+    })
 });
 
 export const interneeFormInitialValues = {
   name: "",
   email: "",
   phone: "",
-  about: ""
+  about: "",
+  resume: null
 };
