@@ -1,11 +1,14 @@
 export const trainingContent = {
-  label: "AI Masterclass",
+  label: "AI Masterclass — 4th Batch",
   heading: "The AI Masterclass.",
   subheading:
-    "A hands-on, three-month program that takes you from prompt to production — build, ship, and think in AI alongside the engineers who do it for a living.",
+    "A hands-on, three-month program that takes you from prompt to production — learn from specialized AI trainers and industry experts, build, ship, and think in AI alongside the engineers who do it for a living.",
   highlights: [
-    { label: "Start Date", value: "15 September", icon: "calendar" },
-    { label: "Duration", value: "3 Months", icon: "book" },
+    { label: "Batch", value: "4th Batch", icon: "sparkles" },
+    { label: "Registration Opens", value: "15 September", icon: "calendar" },
+    { label: "Registration Closes", value: "29 September", icon: "hourglass" },
+    { label: "Classes Start", value: "1 October", icon: "rocket" },
+    { label: "Duration", value: "3 Months", icon: "clock" },
     { label: "Format", value: "Hands-on Cohort", icon: "users" }
   ],
   overviewHeading: "What this masterclass is",
@@ -27,18 +30,18 @@ export const trainingContent = {
 
 export const trainingFormContent = {
   backLabel: "Back to masterclass",
-  label: "AI Masterclass — Application",
-  heading: "Apply for the batch.",
-  subtext: "Tell us a little about yourself and why you want in. Applications for the 15 September cohort are open now.",
+  label: "AI Masterclass — 4th Batch Application",
+  heading: "Apply for the 4th batch.",
+  subtext: "Tell us a little about yourself and why you want in. Applications for the 4th batch (starting 1 October) are open now.",
   fields: {
     name: { label: "Full Name*", placeholder: "Muhammad Khizer" },
     email: { label: "Email*", placeholder: "you@example.com" },
     phone: { label: "Phone*", placeholder: "+92 304 5149450" },
-    about: { label: "About You*", placeholder: "A few lines about your background and why you want to join…" }
+    about: { label: "What's interesting about you*", placeholder: "A few lines about your background and why you want to join…" }
   },
   submitLabel: "Submit Application",
   submittingLabel: "Submitting…",
   successHeading: "Application received",
-  successMessage: "Thanks for applying to the AI Masterclass — we'll review your application and reach out about the 15 September cohort.",
+  successMessage: "Thanks for applying to the AI Masterclass 4th Batch — we'll review your application and reach out about the October cohort.",
   errorMessage: "Something went wrong submitting your application. Please try again."
 };

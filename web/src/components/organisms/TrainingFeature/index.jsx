@@ -1,4 +1,14 @@
-import { BookIcon, CalendarIcon, CheckIcon, UsersIcon } from "@/assets/svgs";
+import {
+  BookIcon,
+  CalendarIcon,
+  CheckIcon,
+  ClockIcon,
+  HourglassIcon,
+  LaptopIcon,
+  RocketIcon,
+  SparkleIcon,
+  UsersIcon
+} from "@/assets/svgs";
 import Button from "@/components/atoms/Button";
 import SectionLabel from "@/components/atoms/SectionLabel";
 import { colors } from "@/constants/colors";
@@ -6,7 +16,18 @@ import { fonts, textVariants } from "@/constants/typography";
 import { trainingContent } from "@/content";
 import { usePageTransition } from "@/context/PageTransition";
 
-const ICONS = { calendar: CalendarIcon, book: BookIcon, users: UsersIcon };
+const ICONS = {
+  calendar: CalendarIcon,
+  book: BookIcon,
+  users: UsersIcon,
+  sparkles: SparkleIcon,
+  sparkle: SparkleIcon,
+  hourglass: HourglassIcon,
+  rocket: RocketIcon,
+  clock: ClockIcon,
+  timer: ClockIcon,
+  laptop: LaptopIcon
+};
 
 const sectionHeading = {
   ...fonts.poppinsSemiBold,
