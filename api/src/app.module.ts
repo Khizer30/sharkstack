@@ -27,7 +27,7 @@ import { AppController } from "@src/app.controller";
     }),
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: ".env"
+      envFilePath: [".env", "../.env"]
     }),
     DatabaseModule,
     CloudinaryModule,
