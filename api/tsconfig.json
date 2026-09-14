@@ -20,7 +20,6 @@
     "noFallthroughCasesInSwitch": false,
     "removeComments": true,
     "outDir": "./dist",
-    "baseUrl": "./",
     "paths": {
       "@middleware/*": [
         "./src/middleware/*"
