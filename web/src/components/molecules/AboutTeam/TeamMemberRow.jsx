@@ -78,10 +78,10 @@ export default function TeamMemberRow({ member, index, isActive, isMobile, rowRe
               >
                 {member.role}
               </p>
-              
+
               {/* Mobile Social Links */}
               {member.socials && Object.keys(member.socials).length > 0 && (
-                <div 
+                <div
                   className="flex items-center gap-1.5 rounded-xl"
                   style={{ background: `${colors.white}0D`, border: `1px solid ${colors.white}14`, padding: "0.4rem" }}
                 >

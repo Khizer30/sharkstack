@@ -110,8 +110,8 @@ export default function ChatBotWidget() {
     setApiQuickReplies([]);
     setMessages((m) => [...m, { id: nextId(), from: "user", text: prompt }]);
     askSharkAI(prompt);
-  // askSharkAI is stable enough (dispatch + stable setters); adding it would require useCallback
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // askSharkAI is stable enough (dispatch + stable setters); adding it would require useCallback
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen, pendingPrePrompt, messages.length]);
 
   const askSharkAI = async (message) => {

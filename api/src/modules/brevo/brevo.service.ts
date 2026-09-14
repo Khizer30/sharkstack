@@ -1,6 +1,6 @@
+import { BrevoClient } from "@getbrevo/brevo";
 import { Injectable, Logger } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
-import { BrevoClient } from "@getbrevo/brevo";
 
 export interface InterneeNotificationData {
   id?: string;

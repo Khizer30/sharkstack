@@ -21,21 +21,11 @@
     "removeComments": true,
     "outDir": "./dist",
     "paths": {
-      "@middleware/*": [
-        "./src/middleware/*"
-      ],
-      "@models/*": [
-        "./src/models/*"
-      ],
-      "@modules/*": [
-        "./src/modules/*"
-      ],
-      "@common/*": [
-        "./src/common/*"
-      ],
-      "@src/*": [
-        "./src/*"
-      ]
+      "@middleware/*": ["./src/middleware/*"],
+      "@models/*": ["./src/models/*"],
+      "@modules/*": ["./src/modules/*"],
+      "@common/*": ["./src/common/*"],
+      "@src/*": ["./src/*"]
     }
   }
 }

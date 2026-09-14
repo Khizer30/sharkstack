@@ -1,9 +1,9 @@
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "motion/react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import HalftoneField from "@/components/atoms/HalftoneField";
 import Spinner from "@/components/atoms/Spinner";
 import Text from "@/components/atoms/Text";
-import HalftoneField from "@/components/atoms/HalftoneField";
 import NavButton from "@/components/molecules/EmployeeReviews/NavButton";
 import { colors } from "@/constants/colors";
 import { fonts } from "@/constants/typography";
@@ -130,7 +130,10 @@ export default function EmployeeReviews() {
             </motion.div>
 
             <div className="relative flex flex-col md:flex-row" style={{ gap: "clamp(2rem, 5vw, 4rem)" }}>
-              <div className="hidden md:flex flex-col items-center" style={{ paddingRight: "clamp(2rem, 4vw, 3rem)", borderRight: `1px solid ${colors.white}15` }}>
+              <div
+                className="hidden md:flex flex-col items-center"
+                style={{ paddingRight: "clamp(2rem, 4vw, 3rem)", borderRight: `1px solid ${colors.white}15` }}
+              >
                 <span
                   style={{
                     ...fonts.montMedium,

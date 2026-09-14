@@ -85,7 +85,10 @@ export default function TrainingFeature() {
         })}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: "clamp(2.5rem, 5vw, 4rem)", maxWidth: "62rem", margin: "clamp(3.5rem, 6vw, 5rem) auto 0" }}>
+      <div
+        className="grid grid-cols-1 md:grid-cols-2"
+        style={{ gap: "clamp(2.5rem, 5vw, 4rem)", maxWidth: "62rem", margin: "clamp(3.5rem, 6vw, 5rem) auto 0" }}
+      >
         <div>
           <h2 style={sectionHeading}>{trainingContent.overviewHeading}</h2>
           {trainingContent.overview.map((paragraph) => (

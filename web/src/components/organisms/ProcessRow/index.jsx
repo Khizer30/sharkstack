@@ -107,14 +107,7 @@ export default function ProcessRow() {
               boxShadow: `12px 24px 80px ${colors.black}B3`
             }}
           >
-            <video
-              ref={videoRef}
-              src={videoMp4}
-              muted
-              loop
-              playsInline
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-            />
+            <video ref={videoRef} src={videoMp4} muted loop playsInline style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
           </div>
 
           <AnimatePresence>

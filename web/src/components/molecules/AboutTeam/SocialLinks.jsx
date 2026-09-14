@@ -11,9 +11,7 @@ const ICONS = {
 export default function SocialLinks({ socials, activeKey, isMobile = false }) {
   const entries = Object.entries(socials || {});
 
-  const wrapperClass = isMobile
-    ? "flex justify-end"
-    : "sticky top-1/2 -translate-y-1/2 hidden md:flex justify-end";
+  const wrapperClass = isMobile ? "flex justify-end" : "sticky top-1/2 -translate-y-1/2 hidden md:flex justify-end";
 
   return (
     <div className={wrapperClass} style={{ height: "fit-content" }}>
