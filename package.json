@@ -1,0 +1,27 @@
+{
+  "name": "sharkstack",
+  "version": "1.0.0",
+  "description": "Sharkstack Website",
+  "private": true,
+  "packageManager": "pnpm@10.5.2",
+  "scripts": {
+    "dev:api": "pnpm --filter api dev",
+    "dev:web": "pnpm --filter web dev",
+    "dev": "concurrently -k \"pnpm dev:api\" \"pnpm dev:web\" --names \"NestJS,React\" --prefix-colors \"red,blue\"",
+    "lint": "pnpm --filter api lint && pnpm --filter web lint",
+    "lint:fix": "pnpm --filter api lint:fix && pnpm --filter web lint:fix",
+    "format": "prettier --check \"**/*.{ts,tsx,json,md}\"",
+    "format:fix": "prettier --write \"**/*.{ts,tsx,json,md}\"",
+    "typecheck": "pnpm --filter api typecheck && pnpm --filter web typecheck",
+    "build:api": "pnpm --filter api build",
+    "build:web": "pnpm --filter web build",
+    "build": "pnpm build:api && pnpm build:web"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "prettier": "^3.7.4"
+  },
+  "engines": {
+    "node": ">=26"
+  }
+}

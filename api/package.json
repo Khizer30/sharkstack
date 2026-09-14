@@ -1,10 +1,5 @@
 {
-  "name": "sharkstack-backend",
-  "version": "1.0.0",
-  "description": "SharkStack Website's Backend",
-  "author": "Syed Muhammad Khizer",
-  "license": "UNLICENSED",
-  "private": true,
+  "name": "api",
   "scripts": {
     "db:generate": "pnpm drizzle-kit generate",
     "db:migrate": "pnpm drizzle-kit migrate",

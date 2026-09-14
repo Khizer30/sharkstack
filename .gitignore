@@ -3,6 +3,7 @@
 
 # Dependency Directories
 node_modules
+.pnpm-store/
 
 # Compiled
 .next
@@ -17,6 +18,7 @@ next-env.d.ts
 
 # Environment Variable Files
 .env
+.env*
 .env.*
 !.env.example
 
@@ -24,8 +26,6 @@ next-env.d.ts
 .Extras
 .vscode
 .claude
-copilot-instructions.md
-CLAUDE.md
 
 # Playwright
 test-results
