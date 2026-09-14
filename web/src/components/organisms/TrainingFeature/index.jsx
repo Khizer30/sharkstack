@@ -1,3 +1,4 @@
+import meezanBankLogo from "@/assets/images/meezan-bank-logo.png";
 import {
   BookIcon,
   CalendarIcon,
@@ -11,7 +12,6 @@ import {
   UsersIcon,
   WhatsappIcon
 } from "@/assets/svgs";
-import meezanBankLogo from "@/assets/images/meezan-bank-logo.png";
 import Button from "@/components/atoms/Button";
 import SectionLabel from "@/components/atoms/SectionLabel";
 import { colors } from "@/constants/colors";
@@ -173,9 +173,7 @@ export default function TrainingFeature() {
           />
           <div style={{ display: "flex", flexDirection: "column", gap: "0.3rem" }}>
             <span style={{ ...fonts.poppinsSemiBold, fontSize: "1.05rem", color: colors.textPrimary }}>{trainingContent.bank.name}</span>
-            <span style={{ ...fonts.mono, fontSize: "0.9rem", color: colors.textSecondary, letterSpacing: "0.02em" }}>
-              {trainingContent.bank.iban}
-            </span>
+            <span style={{ ...fonts.mono, fontSize: "0.9rem", color: colors.textSecondary, letterSpacing: "0.02em" }}>{trainingContent.bank.iban}</span>
             <span style={{ ...fonts.montRegular, fontSize: "0.85rem", color: colors.textMuted }}>{trainingContent.bank.accountTitle}</span>
           </div>
         </div>

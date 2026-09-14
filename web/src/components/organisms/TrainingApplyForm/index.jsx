@@ -173,9 +173,7 @@ export default function TrainingApplyForm() {
                 }}
               />
               {fieldError("resume") && (
-                <p style={{ ...fonts.montMedium, fontSize: "0.8rem", color: colors.error, margin: "0.25rem 0 0" }}>
-                  {fieldError("resume")}
-                </p>
+                <p style={{ ...fonts.montMedium, fontSize: "0.8rem", color: colors.error, margin: "0.25rem 0 0" }}>{fieldError("resume")}</p>
               )}
             </div>
 
