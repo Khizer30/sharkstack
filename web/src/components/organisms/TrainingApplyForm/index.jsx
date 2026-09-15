@@ -77,6 +77,66 @@ export default function TrainingApplyForm() {
 
         <p style={{ ...textVariants.body, color: colors.textSecondary, marginTop: "1rem", maxWidth: "34rem" }}>{trainingFormContent.subtext}</p>
 
+        <div
+          style={{
+            marginTop: "clamp(2rem, 4vw, 3rem)",
+            padding: "clamp(2rem, 4vw, 2.75rem)",
+            borderRadius: "1.25rem",
+            border: `1px solid ${colors.borderLight}`,
+            background: colors.white,
+            boxShadow: `0 4px 20px ${colors.black}05`
+          }}
+        >
+          <h3 style={{ ...fonts.poppinsSemiBold, fontSize: "clamp(1rem, 2vw, 1.15rem)", color: colors.textPrimary, margin: "0 0 1.75rem", letterSpacing: "-0.01em" }}>
+            What happens after you apply?
+          </h3>
+          <div style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "1.25rem"
+          }}>
+            {[
+              "Submit your application form below",
+              "You'll be redirected to our secure payment page",
+              "Pay the $108 registration fee",
+              "Your receipt and seat confirmation will be sent to your email",
+              "Prepare to start the masterclass on October 1st!"
+            ].map((step, index) => (
+              <div key={index} style={{
+                display: "flex",
+                gap: "1rem",
+                alignItems: "flex-start"
+              }}>
+                <div style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "2rem",
+                  height: "2rem",
+                  borderRadius: "50%",
+                  background: colors.primary,
+                  color: colors.white,
+                  flexShrink: 0,
+                  ...fonts.poppinsSemiBold,
+                  fontSize: "0.85rem"
+                }}>
+                  {index + 1}
+                </div>
+                <p style={{
+                  ...fonts.montRegular,
+                  fontSize: "0.95rem",
+                  color: colors.textSecondary,
+                  lineHeight: 1.6,
+                  margin: "0.3rem 0 0",
+                  flex: 1
+                }}>
+                  {step}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {status === "succeeded" ? (
           <div
             style={{
