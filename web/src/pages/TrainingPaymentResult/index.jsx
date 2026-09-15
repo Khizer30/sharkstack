@@ -14,10 +14,14 @@ export default function TrainingPaymentResult() {
   const { revealPage, transitionTo } = usePageTransition();
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
-  const internee = searchParams.get("internee");
+  // `order_id` (our internee id) and `tracker` are appended by Safepay itself onto whatever bare
+  // redirect/cancel URL we gave it - NOT query params we control. Safepay concatenates its own
+  // `?order_id=...&tracker=...` onto the URL we provided, so that URL must have no query string of
+  // its own, or you end up with a malformed URL with two `?`s (e.g. `...?internee=xyz?order_id=...`).
+  const orderId = searchParams.get("order_id");
 
-  // The Safepay webhook is the authoritative source of truth - the redirect's own
-  // `status` query param is only used for a friendly first paint while we confirm.
+  // The Safepay webhook is the authoritative source of truth - the /success vs /failure path we
+  // redirect to is only used for a friendly first paint while we confirm.
   const [confirmedStatus, setConfirmedStatus] = useState(null);
 
   useEffect(() => {
@@ -25,17 +29,47 @@ export default function TrainingPaymentResult() {
   }, [revealPage]);
 
   useEffect(() => {
-    if (!internee) {
+    if (!orderId) {
       setConfirmedStatus("FAILED");
       return;
     }
-    dispatch(fetchPaymentStatus(internee))
-      .unwrap()
-      .then((result) => setConfirmedStatus(result.paymentStatus))
-      .catch(() => setConfirmedStatus("FAILED"));
-  }, [dispatch, internee]);
 
-  const isPending = confirmedStatus === null;
+    let cancelled = false;
+    let attempts = 0;
+    // The webhook can land a few seconds after the redirect (or later, under load) - poll instead
+    // of giving up on the first still-PENDING response, which would otherwise look like a failure.
+    const maxAttempts = 15;
+    const pollIntervalMs = 3000;
+
+    const poll = () => {
+      dispatch(fetchPaymentStatus(orderId))
+        .unwrap()
+        .then((result) => {
+          if (cancelled) return;
+          if (result.paymentStatus === "PENDING") {
+            attempts += 1;
+            if (attempts < maxAttempts) {
+              setTimeout(poll, pollIntervalMs);
+            } else {
+              // Give up waiting, but don't claim failure - the webhook may still land later.
+              setConfirmedStatus("PENDING");
+            }
+            return;
+          }
+          setConfirmedStatus(result.paymentStatus);
+        })
+        .catch(() => {
+          if (!cancelled) setConfirmedStatus("FAILED");
+        });
+    };
+
+    poll();
+    return () => {
+      cancelled = true;
+    };
+  }, [dispatch, orderId]);
+
+  const isPending = confirmedStatus === null || confirmedStatus === "PENDING";
   const isPaid = confirmedStatus === "PAID";
 
   const heading = isPending

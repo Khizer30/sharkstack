@@ -79,16 +79,19 @@ export class InterneesService {
         .where(eq(internees.id, internee.id));
 
       const frontendUrl = this.configService.get<string>("FRONTEND_URL") ?? "http://localhost:5173";
-      const redirectUrl = this.configService.get<string>("SAFEPAY_REDIRECT_URL") ?? `${frontendUrl}/ai-training/payment-result?status=success`;
-      const cancelUrl = this.configService.get<string>("SAFEPAY_CANCEL_URL") ?? `${frontendUrl}/ai-training/payment-result?status=failure`;
+      // These must be bare URLs with no query string of their own - Safepay appends its own
+      // `?order_id=...&tracker=...` directly onto them, so we identify the internee via the
+      // `order_id` it echoes back (which we set to internee.id below) rather than appending our
+      // own query params here, which would produce a malformed URL with two `?`s.
+      const redirectUrl = this.configService.get<string>("SAFEPAY_REDIRECT_URL") ?? `${frontendUrl}/ai-training/payment-result/success`;
+      const cancelUrl = this.configService.get<string>("SAFEPAY_CANCEL_URL") ?? `${frontendUrl}/ai-training/payment-result/failure`;
 
       return this.safepayService.buildCheckoutUrl({
         userToken,
         trackerToken,
         orderId: internee.id,
-        // Safepay also appends its own `tracker` param to these on redirect.
-        redirectUrl: `${redirectUrl}&internee=${internee.id}`,
-        cancelUrl: `${cancelUrl}&internee=${internee.id}`
+        redirectUrl,
+        cancelUrl
       });
     } catch (error) {
       this.logger.error(`Safepay checkout initiation failed for internee ${internee.id}: ${error.message}`);

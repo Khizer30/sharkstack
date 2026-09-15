@@ -46,6 +46,8 @@ export default function AppRoutes() {
             <Route path="/ai-training" element={<Training />} />
             <Route path="/ai-training/form" element={<TrainingForm />} />
             <Route path="/ai-training/payment-result" element={<TrainingPaymentResult />} />
+            <Route path="/ai-training/payment-result/success" element={<TrainingPaymentResult />} />
+            <Route path="/ai-training/payment-result/failure" element={<TrainingPaymentResult />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/refunds" element={<Refunds />} />
