@@ -6,3 +6,5 @@ export const createInternee = createAsyncThunk("internees/create", (internee) =>
 export const fetchInternees = createAsyncThunk("internees/fetchAll", () => interneeService.list(), {
   condition: (_, { getState }) => getState().internees.status === "idle"
 });
+
+export const fetchPaymentStatus = createAsyncThunk("internees/fetchPaymentStatus", (id) => interneeService.paymentStatus(id));

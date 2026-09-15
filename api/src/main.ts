@@ -9,7 +9,7 @@ import { AppModule } from "@src/app.module";
 
 // Bootstrap
 (async (): Promise<undefined> => {
-  const app: NestExpressApplication = await NestFactory.create<NestExpressApplication>(AppModule);
+  const app: NestExpressApplication = await NestFactory.create<NestExpressApplication>(AppModule, { rawBody: true });
   const configService = app.get(ConfigService);
 
   const corsOriginsVal = configService.get<string>("CORS_ORIGINS");

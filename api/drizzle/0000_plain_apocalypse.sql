@@ -1,3 +1,4 @@
+CREATE TYPE "public"."payment_status" AS ENUM('PENDING', 'PAID', 'FAILED');--> statement-breakpoint
 CREATE TYPE "public"."job_department" AS ENUM('DESIGN', 'DEVELOPMENT', 'MARKETING', 'SALES', 'HR', 'OTHER');--> statement-breakpoint
 CREATE TYPE "public"."job_type" AS ENUM('FULL_TIME', 'PART_TIME', 'CONTRACT');--> statement-breakpoint
 CREATE TYPE "public"."work_nature" AS ENUM('ON_SITE', 'REMOTE', 'HYBRID');--> statement-breakpoint
@@ -28,7 +29,13 @@ CREATE TABLE "internees" (
 	"email" text NOT NULL,
 	"phone" text NOT NULL,
 	"about" text NOT NULL,
-	"resume_url" text
+	"resume_url" text,
+	"payment_status" "payment_status" DEFAULT 'PENDING' NOT NULL,
+	"amount_usd_cents" integer DEFAULT 10800 NOT NULL,
+	"exchange_rate" double precision,
+	"amount_pkr_cents" integer,
+	"safepay_tracker_token" text,
+	"paid_at" timestamp
 );
 --> statement-breakpoint
 CREATE TABLE "jobs" (

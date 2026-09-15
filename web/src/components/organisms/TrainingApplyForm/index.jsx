@@ -17,14 +17,18 @@ export default function TrainingApplyForm() {
   const dispatch = useDispatch();
   const { transitionTo } = usePageTransition();
   const status = useSelector((s) => s.internees.status);
+  const checkoutUrl = useSelector((s) => s.internees.checkoutUrl);
 
   const formik = useFormik({
     initialValues: interneeFormInitialValues,
     validationSchema: interneeFormSchema,
     onSubmit: async (values, { resetForm }) => {
       try {
-        await dispatch(createInternee(values)).unwrap();
+        const result = await dispatch(createInternee(values)).unwrap();
         resetForm();
+        if (result.checkoutUrl) {
+          window.location.href = result.checkoutUrl;
+        }
       } catch {
         // surfaced via redux `status`/`error` below
       }
@@ -85,9 +89,11 @@ export default function TrainingApplyForm() {
               boxShadow: `0 8px 30px ${colors.black}08`
             }}
           >
-            <p style={{ ...fonts.poppinsSemiBold, fontSize: "1.15rem", color: colors.textPrimary, margin: 0 }}>{trainingFormContent.successHeading}</p>
+            <p style={{ ...fonts.poppinsSemiBold, fontSize: "1.15rem", color: colors.textPrimary, margin: 0 }}>
+              {checkoutUrl ? trainingFormContent.redirectingHeading : trainingFormContent.successHeading}
+            </p>
             <p style={{ ...fonts.montRegular, fontSize: "0.9rem", color: colors.textSecondary, margin: "0.6rem 0 0", lineHeight: 1.6 }}>
-              {trainingFormContent.successMessage}
+              {checkoutUrl ? trainingFormContent.redirectingMessage : trainingFormContent.successMessage}
             </p>
           </div>
         ) : (

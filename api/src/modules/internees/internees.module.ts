@@ -4,9 +4,10 @@ import { CloudinaryModule } from "@modules/cloudinary/cloudinary.module";
 import { DatabaseModule } from "@modules/database/database.module";
 import { InterneesController } from "@modules/internees/internees.controller";
 import { InterneesService } from "@modules/internees/internees.service";
+import { SafepayModule } from "@modules/safepay/safepay.module";
 
 @Module({
-  imports: [DatabaseModule, BrevoModule, CloudinaryModule],
+  imports: [DatabaseModule, BrevoModule, CloudinaryModule, SafepayModule],
   controllers: [InterneesController],
   providers: [InterneesService],
   exports: [InterneesService]

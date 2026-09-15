@@ -16,5 +16,6 @@ export const interneeService = {
     // Otherwise use JSON
     return api.post(ENDPOINTS.INTERNEES.CREATE, internee);
   },
-  list: () => api.get(ENDPOINTS.INTERNEES.LIST)
+  list: () => api.get(ENDPOINTS.INTERNEES.LIST),
+  paymentStatus: (id) => api.get(ENDPOINTS.INTERNEES.PAYMENT_STATUS(id))
 };

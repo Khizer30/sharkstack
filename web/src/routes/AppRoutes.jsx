@@ -12,6 +12,7 @@ const JobDetail = lazy(() => import("@/pages/JobDetail"));
 const Pricing = lazy(() => import("@/pages/Pricing"));
 const Training = lazy(() => import("@/pages/Training"));
 const TrainingForm = lazy(() => import("@/pages/TrainingForm"));
+const TrainingPaymentResult = lazy(() => import("@/pages/TrainingPaymentResult"));
 const Terms = lazy(() => import("@/pages/Terms"));
 const Privacy = lazy(() => import("@/pages/Privacy"));
 const Refunds = lazy(() => import("@/pages/Refunds"));
@@ -44,6 +45,7 @@ export default function AppRoutes() {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/ai-training" element={<Training />} />
             <Route path="/ai-training/form" element={<TrainingForm />} />
+            <Route path="/ai-training/payment-result" element={<TrainingPaymentResult />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/refunds" element={<Refunds />} />

@@ -42,4 +42,4 @@ export { clientsWorldMapContent } from "./clientsWorldMap";
 export { supportEmail } from "./site";
 export { termsContent, privacyContent, refundContent } from "./legal";
 export { pricingContent, gigServices } from "./pricing";
-export { trainingContent, trainingFormContent } from "./training";
+export { trainingContent, trainingFormContent, trainingPaymentResultContent } from "./training";

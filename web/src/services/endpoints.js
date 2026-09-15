@@ -19,7 +19,8 @@ export const ENDPOINTS = {
   },
   INTERNEES: {
     CREATE: "/internees",
-    LIST: "/internees"
+    LIST: "/internees",
+    PAYMENT_STATUS: (id) => `/internees/${id}/payment-status`
   },
   TESTIMONIALS: {
     CREATE: "/testimonials",

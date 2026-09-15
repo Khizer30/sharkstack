@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { createInternee, fetchInternees } from "@/store/actions/interneeActions";
+import { createInternee, fetchInternees, fetchPaymentStatus } from "@/store/actions/interneeActions";
 
 const initialState = {
   items: [],
   status: "idle", // 'idle' | 'loading' | 'succeeded' | 'failed'
   error: null,
-  lastInternee: null
+  lastInternee: null,
+  checkoutUrl: null,
+  paymentStatus: "idle" // 'idle' | 'loading' | 'succeeded' | 'failed'
 };
 
 const interneeSlice = createSlice({
@@ -26,6 +28,7 @@ const interneeSlice = createSlice({
       .addCase(createInternee.fulfilled, (state, action) => {
         state.status = "succeeded";
         state.lastInternee = action.payload.internee;
+        state.checkoutUrl = action.payload.checkoutUrl ?? null;
       })
       .addCase(createInternee.rejected, (state, action) => {
         state.status = "failed";
@@ -34,6 +37,16 @@ const interneeSlice = createSlice({
 
       .addCase(fetchInternees.fulfilled, (state, action) => {
         state.items = action.payload.internees ?? [];
+      })
+
+      .addCase(fetchPaymentStatus.pending, (state) => {
+        state.paymentStatus = "loading";
+      })
+      .addCase(fetchPaymentStatus.fulfilled, (state, action) => {
+        state.paymentStatus = action.payload.paymentStatus;
+      })
+      .addCase(fetchPaymentStatus.rejected, (state) => {
+        state.paymentStatus = "failed";
       });
   }
 });

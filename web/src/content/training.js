@@ -55,5 +55,18 @@ export const trainingFormContent = {
   submittingLabel: "Submitting…",
   successHeading: "Application received",
   successMessage: "Thanks for applying to the AI Masterclass 4th Batch — we'll review your application and reach out about the October cohort.",
+  redirectingHeading: "Redirecting you to payment…",
+  redirectingMessage: "Application received — hang tight, we're taking you to Safepay to complete your $108 registration fee.",
   errorMessage: "Something went wrong submitting your application. Please try again."
+};
+
+export const trainingPaymentResultContent = {
+  backLabel: "Back to masterclass",
+  successHeading: "Payment successful",
+  successMessage: "You're all set! Your seat for the AI Masterclass 4th Batch is confirmed — we'll be in touch with the class details soon.",
+  failureHeading: "Payment failed",
+  failureMessage: "Your payment didn't go through. You can head back to the application form and try again.",
+  pendingHeading: "Confirming your payment…",
+  pendingMessage: "This usually takes a few seconds. Please don't close this page.",
+  retryLabel: "Try again"
 };

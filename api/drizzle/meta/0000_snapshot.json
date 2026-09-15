@@ -1,5 +1,5 @@
 {
-  "id": "4e07f996-14c0-45c4-b284-e4c11fbc5158",
+  "id": "ef1d131a-8306-417f-811e-599dfb1468e0",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -146,6 +146,45 @@
         "resume_url": {
           "name": "resume_url",
           "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "payment_status": {
+          "name": "payment_status",
+          "type": "payment_status",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'PENDING'"
+        },
+        "amount_usd_cents": {
+          "name": "amount_usd_cents",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 10800
+        },
+        "exchange_rate": {
+          "name": "exchange_rate",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "amount_pkr_cents": {
+          "name": "amount_pkr_cents",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "safepay_tracker_token": {
+          "name": "safepay_tracker_token",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "paid_at": {
+          "name": "paid_at",
+          "type": "timestamp",
           "primaryKey": false,
           "notNull": false
         }
@@ -417,8 +456,12 @@
           "name": "automation_quotes_lead_id_leads_id_fk",
           "tableFrom": "automation_quotes",
           "tableTo": "leads",
-          "columnsFrom": ["lead_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "lead_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "set null",
           "onUpdate": "no action"
         }
@@ -489,8 +532,12 @@
           "name": "bookings_lead_id_leads_id_fk",
           "tableFrom": "bookings",
           "tableTo": "leads",
-          "columnsFrom": ["lead_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "lead_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "set null",
           "onUpdate": "no action"
         }
@@ -571,7 +618,9 @@
         "packages_slug_unique": {
           "name": "packages_slug_unique",
           "nullsNotDistinct": false,
-          "columns": ["slug"]
+          "columns": [
+            "slug"
+          ]
         }
       },
       "policies": {},
@@ -718,8 +767,12 @@
           "name": "projects_package_id_packages_id_fk",
           "tableFrom": "projects",
           "tableTo": "packages",
-          "columnsFrom": ["package_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "package_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "set null",
           "onUpdate": "no action"
         }
@@ -861,30 +914,65 @@
     }
   },
   "enums": {
+    "public.payment_status": {
+      "name": "payment_status",
+      "schema": "public",
+      "values": [
+        "PENDING",
+        "PAID",
+        "FAILED"
+      ]
+    },
     "public.job_department": {
       "name": "job_department",
       "schema": "public",
-      "values": ["DESIGN", "DEVELOPMENT", "MARKETING", "SALES", "HR", "OTHER"]
+      "values": [
+        "DESIGN",
+        "DEVELOPMENT",
+        "MARKETING",
+        "SALES",
+        "HR",
+        "OTHER"
+      ]
     },
     "public.job_type": {
       "name": "job_type",
       "schema": "public",
-      "values": ["FULL_TIME", "PART_TIME", "CONTRACT"]
+      "values": [
+        "FULL_TIME",
+        "PART_TIME",
+        "CONTRACT"
+      ]
     },
     "public.work_nature": {
       "name": "work_nature",
       "schema": "public",
-      "values": ["ON_SITE", "REMOTE", "HYBRID"]
+      "values": [
+        "ON_SITE",
+        "REMOTE",
+        "HYBRID"
+      ]
     },
     "public.automation_tier": {
       "name": "automation_tier",
       "schema": "public",
-      "values": ["SIMPLE", "MEDIUM", "COMPLEX"]
+      "values": [
+        "SIMPLE",
+        "MEDIUM",
+        "COMPLEX"
+      ]
     },
     "public.project_status": {
       "name": "project_status",
       "schema": "public",
-      "values": ["DRAFT", "PLANNING", "IN_PROGRESS", "ON_HOLD", "COMPLETED", "CANCELLED"]
+      "values": [
+        "DRAFT",
+        "PLANNING",
+        "IN_PROGRESS",
+        "ON_HOLD",
+        "COMPLETED",
+        "CANCELLED"
+      ]
     }
   },
   "schemas": {},
