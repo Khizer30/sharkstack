@@ -22,11 +22,15 @@ export class ExchangeRateService {
 
     try {
       const res = await fetch("https://open.er-api.com/v6/latest/USD");
-      if (!res.ok) throw new Error(`Exchange rate API returned ${res.status}`);
+      if (!res.ok) {
+        throw new Error(`Exchange rate API returned ${res.status}`);
+      }
 
       const data = (await res.json()) as { rates?: Record<string, number> };
       const rate = data.rates?.PKR;
-      if (!rate) throw new Error("PKR rate missing from response");
+      if (!rate) {
+        throw new Error("PKR rate missing from response");
+      }
 
       this.cached = { rate, fetchedAt: Date.now() };
       return rate;

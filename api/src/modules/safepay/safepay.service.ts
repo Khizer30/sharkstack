@@ -1,6 +1,6 @@
+import * as crypto from "crypto";
 import { BadGatewayException, Injectable, Logger } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
-import * as crypto from "crypto";
 
 interface SafepayTokenResponse {
   data?: unknown;
@@ -161,7 +161,9 @@ export class SafepayService {
    * hashed as-is, never a re-serialized copy of the parsed body.
    */
   verifyWebhookSignature(rawBody: Buffer, signatureHeader: string | undefined): boolean {
-    if (!signatureHeader) return false;
+    if (!signatureHeader) {
+      return false;
+    }
 
     const secret = this.configService.get<string>("SAFEPAY_WEBHOOK_SECRET");
     if (!secret) {
@@ -172,7 +174,9 @@ export class SafepayService {
     const expected = crypto.createHmac("sha512", secret).update(rawBody).digest("hex");
     const expectedBuf = Buffer.from(expected, "utf8");
     const receivedBuf = Buffer.from(signatureHeader, "utf8");
-    if (expectedBuf.length !== receivedBuf.length) return false;
+    if (expectedBuf.length !== receivedBuf.length) {
+      return false;
+    }
     return crypto.timingSafeEqual(expectedBuf, receivedBuf);
   }
 }

@@ -87,14 +87,24 @@ export default function TrainingApplyForm() {
             boxShadow: `0 4px 20px ${colors.black}05`
           }}
         >
-          <h3 style={{ ...fonts.poppinsSemiBold, fontSize: "clamp(1rem, 2vw, 1.15rem)", color: colors.textPrimary, margin: "0 0 1.75rem", letterSpacing: "-0.01em" }}>
+          <h3
+            style={{
+              ...fonts.poppinsSemiBold,
+              fontSize: "clamp(1rem, 2vw, 1.15rem)",
+              color: colors.textPrimary,
+              margin: "0 0 1.75rem",
+              letterSpacing: "-0.01em"
+            }}
+          >
             What happens after you apply?
           </h3>
-          <div style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "1.25rem"
-          }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "1.25rem"
+            }}
+          >
             {[
               "Submit your application form below",
               "You'll be redirected to our secure payment page",
@@ -102,34 +112,41 @@ export default function TrainingApplyForm() {
               "Your receipt and seat confirmation will be sent to your email",
               "Prepare to start the masterclass on October 1st!"
             ].map((step, index) => (
-              <div key={index} style={{
-                display: "flex",
-                gap: "1rem",
-                alignItems: "flex-start"
-              }}>
-                <div style={{
+              <div
+                key={index}
+                style={{
                   display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  width: "2rem",
-                  height: "2rem",
-                  borderRadius: "50%",
-                  background: colors.primary,
-                  color: colors.white,
-                  flexShrink: 0,
-                  ...fonts.poppinsSemiBold,
-                  fontSize: "0.85rem"
-                }}>
+                  gap: "1rem",
+                  alignItems: "flex-start"
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: "2rem",
+                    height: "2rem",
+                    borderRadius: "50%",
+                    background: colors.primary,
+                    color: colors.white,
+                    flexShrink: 0,
+                    ...fonts.poppinsSemiBold,
+                    fontSize: "0.85rem"
+                  }}
+                >
                   {index + 1}
                 </div>
-                <p style={{
-                  ...fonts.montRegular,
-                  fontSize: "0.95rem",
-                  color: colors.textSecondary,
-                  lineHeight: 1.6,
-                  margin: "0.3rem 0 0",
-                  flex: 1
-                }}>
+                <p
+                  style={{
+                    ...fonts.montRegular,
+                    fontSize: "0.95rem",
+                    color: colors.textSecondary,
+                    lineHeight: 1.6,
+                    margin: "0.3rem 0 0",
+                    flex: 1
+                  }}
+                >
                   {step}
                 </p>
               </div>
